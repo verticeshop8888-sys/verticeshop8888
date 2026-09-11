@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertice Shop | Productos Digitales</title>
+    
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --brand-color: #ff2d55; /* Color principal (puedes ajustarlo a tu marca) */
+            --brand-hover: #e0244b;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --text-color: #f8fafc;
+                --text-muted: #94a3b8;
+                --card-bg: #1e293b;
+                --border-color: #334155;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, rgba(0,0,0,0.02) 100%);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .page-container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Espacio para tu logotipo */
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            background-color: var(--border-color);
+            border-radius: 20px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-muted);
+            /* Elimina el background y usa un <img> cuando tengas tu logo listo */
+        }
+
+        .header {
+            margin-bottom: 2.5rem;
+        }
+
+        .header h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
+            color: var(--text-color);
+        }
+
+        .header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .form-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            transition: all 0.3s ease;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1.05rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        input[type="email"]:focus {
+            border-color: var(--brand-color);
+            box-shadow: 0 0 0 4px rgba(255, 45, 85, 0.1);
+            background-color: var(--card-bg);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background-color: var(--brand-color);
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--brand-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(224, 36, 75, 0.2);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(1px);
+        }
+
+        [data-gumroad-follow-message] {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .disclaimer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            line-height: 1.4;
+        }
+
+        @media (min-width: 640px) {
+            .form-group {
+                flex-direction: row;
+            }
+            button[type="submit"] {
+                width: auto;
+                min-width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="page-container">
+        <header class="header">
+            <!-- Reemplaza la 'V' con una etiqueta <img> cuando diseñes el logo -->
+            <div class="brand-logo">V</div>
+            <h1>Vertice Shop</h1>
+            <p>Únete a la comunidad. Regístrate abajo para obtener acceso anticipado a nuevos lanzamientos, productos digitales exclusivos y ofertas especiales.</p>
+        </header>
+
+        <section class="form-card">
+            <form data-gumroad-follow>
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Ingresa tu correo electrónico..." 
+                        required 
+                        aria-label="Correo electrónico"
+                    />
+                    <button type="submit">Suscribirse</button>
+                </div>
+                
+                <div data-gumroad-follow-message>
+                    ¡Gracias por suscribirte! Por favor revisa tu bandeja de entrada para confirmar.
+                </div>
+            </form>
+            <p class="disclaimer">
+                * Si nuestra cuenta aún está bajo revisión, serás redirigido a la página estándar de suscripción de Gumroad.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>
